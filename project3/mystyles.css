@@ -16,30 +16,37 @@ h1 {
     
 }
 
-#deckid{
+#dealerTotal{
     font-family: 'Open Sans', sans-serif;
     text-align: left;
     text-transform: uppercase;
     color: #EFEFEF;
     margin: 3%;
-
 }
+
+#playerTotal{
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+    color: #EFEFEF;
+    margin: 3%;
+}
+
 figure{
     display: flex;
-    border-radius: 0px;
 }
 
 #hand{
     background-color:white;
     border-radius: 20px;
     margin: 3%;
-    height: 185px;
+    height: 180px;
 }
 
 img{
     width: 120px;
     height: auto;
-    margin: 1%;
+    margin: .5%;
 }
 
 button {
@@ -59,9 +66,7 @@ button:hover {
     transition: 1s;
     cursor: pointer;
 }
-
-
-
-
-
-
+button:disabled {
+    pointer-events: none;
+    opacity: 0.7;
+}
