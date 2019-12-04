@@ -4,8 +4,14 @@ body {
     background-color: #EFEFEF;
 }
 
-h1 {
+#heading {
     letter-spacing: 0.3em;
+    font-size: xx-large;
+}
+
+#finalOutcome{
+    font-size: x-large;
+    color: #EFEFEF;
 }
 
 #table {
@@ -68,6 +74,6 @@ button:hover {
 }
 button:disabled {
     pointer-events: none;
-    background-color: rgb(160, 160, 160);
+    background-color: rgb(180, 180, 180);
     opacity: 0.7;
 }
