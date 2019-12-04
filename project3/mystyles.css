@@ -66,6 +66,7 @@ button {
     margin-top: 22px;
     vertical-align: top;
     height: 50px;
+    font-weight: bold;
 }
 button:hover {
     opacity: 0.7;
