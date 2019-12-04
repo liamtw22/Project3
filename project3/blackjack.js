@@ -260,6 +260,8 @@ var checkPlayerHand = function()
 var stand = function()
 {
     document.getElementById("NewGame").disabled = true;
+    document.getElementById("Hit").disabled = true;
+    document.getElementById("Stand").disabled = true;
     //turn over dealer's hole card
     document.getElementById("dealer0").src = "https://deckofcardsapi.com/static/img/" + dealerHoldCard + ".png";
     document.getElementById("dealer0").alt = dealerHoldCard;
