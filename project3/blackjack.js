@@ -11,22 +11,22 @@ var proceed = true;
 
 var countHand = function(cardArray)
 {
-    var sum = 0;
-        
-    for (var i = 0; i < cardArray.length; i++) 
-    {
-        sum += parseInt(cardArray[i], 10);
-    }
-        
-    if (sum > 21)
-    for (var i = 0; i < cardArray.length; i++) 
-    {
-        if(cardArray[i] == 11 && sum > 21)
-        {
-            sum = sum - 10;
-        }
-    }
-    return sum;
+	var sum = 0;
+		
+	for (var i = 0; i < cardArray.length; i++) 
+	{
+		sum += parseInt(cardArray[i], 10);
+	}
+		
+	if (sum > 21)
+	for (var i = 0; i < cardArray.length; i++) 
+	{
+		if(cardArray[i] == 11 && sum > 21)
+		{
+			sum = sum - 10;
+		}
+	}
+	return sum;
 }
 
 var newDeck = function()
@@ -37,16 +37,8 @@ var newDeck = function()
     currPlayerCard = 0;
     currDealerCard = 0;
 
-    document.getElementById("playerTotal").innerHTML = "";
-    document.getElementById("dealerTotal").innerHTML = "";
-
-    document.getElementById("playerCard0").innerHTML = "";
-    document.getElementById("playerCard1").innerHTML = "";
-    document.getElementById("playerCard2").innerHTML = "";
-    document.getElementById("playerCard3").innerHTML = "";
-    document.getElementById("playerCard4").innerHTML = "";
-    document.getElementById("playerCard5").innerHTML = "";
-    document.getElementById("playerCard6").innerHTML = "";
+    document.getElementById("playerTotal").innerHTML = "Player: ";
+    document.getElementById("dealerTotal").innerHTML = "Dealer: ";
 
     document.getElementById("player0").style.display='none';
     document.getElementById("player1").style.display='none';
@@ -55,14 +47,6 @@ var newDeck = function()
     document.getElementById("player4").style.display='none';
     document.getElementById("player5").style.display='none';
     document.getElementById("player6").style.display='none';
-
-    document.getElementById("dealerCard0").innerHTML = "";
-    document.getElementById("dealerCard1").innerHTML = "";
-    document.getElementById("dealerCard2").innerHTML = "";
-    document.getElementById("dealerCard3").innerHTML = "";
-    document.getElementById("dealerCard4").innerHTML = "";
-    document.getElementById("dealerCard5").innerHTML = "";
-    document.getElementById("dealerCard6").innerHTML = "";
 
     document.getElementById("dealer0").style.display='none';
     document.getElementById("dealer1").style.display='none';
@@ -151,12 +135,11 @@ var drawPlayerCard = function()
         console.log("currPlayerCard: " + currPlayerCard);
         console.log("card code is: " + cardCode);
         document.getElementById("player" + currPlayerCard + "").style.display='block';
-        document.getElementById("playerCard" + currPlayerCard + "").innerHTML = cardCode;
         document.getElementById("player" + currPlayerCard + "").src = "https://deckofcardsapi.com/static/img/" + cardCode + ".png";
         document.getElementById("player" + currPlayerCard + "").alt = cardCode;
 
-        var playerTot = "Total: " + countHand(playerHand);
-        document.getElementById("playerTotal").innerHTML = playerTot;
+        var playerTot = " " + countHand(playerHand);
+        document.getElementById("playerTotal").innerHTML = "Player:" + playerTot;
         currPlayerCard++;
     };
     request.send();
@@ -210,28 +193,25 @@ var drawDealerCard = function()
         
         if(currDealerCard == 0)
         {
-            document.getElementById("dealerCard" + currDealerCard + "").innerHTML = "Hole Card";
             dealerHoldCard = cardCode;
-            document.getElementById("dealerTotal").innerHTML = "Total: " + 0;
+            document.getElementById("dealerTotal").innerHTML = "Dealer: " + 0;
             document.getElementById("dealer" + currDealerCard + "").src = "images/back_of_card.png";
             document.getElementById("dealer" + currDealerCard + "").style.display='block';
         }
         else
         if (currDealerCard == 1)
         {
-            document.getElementById("dealerTotal").innerHTML = "Total: " + dealerHand[1];
+            document.getElementById("dealerTotal").innerHTML = "Dealer: " + dealerHand[1];
             document.getElementById("dealer" + currDealerCard + "").src = "https://deckofcardsapi.com/static/img/" + cardCode + ".png";
             document.getElementById("dealer" + currDealerCard + "").style.display='block';
             document.getElementById("dealer" + currDealerCard + "").alt = cardCode;
-            document.getElementById("dealerCard" + currDealerCard + "").innerHTML = cardCode;
         }
         else
         {
-            document.getElementById("dealerTotal").innerHTML = "Total: " + countHand(dealerHand);
+            document.getElementById("dealerTotal").innerHTML = "Dealer: " + countHand(dealerHand);
             document.getElementById("dealer" + currDealerCard + "").src = "https://deckofcardsapi.com/static/img/" + cardCode + ".png";
             document.getElementById("dealer" + currDealerCard + "").style.display='block';
             document.getElementById("dealer" + currDealerCard + "").alt = cardCode;
-            document.getElementById("dealerCard" + currDealerCard + "").innerHTML = cardCode;
         }
         
         currDealerCard++;
@@ -270,8 +250,8 @@ var stand = function()
     //turn over dealer's hole card
     document.getElementById("dealer0").src = "https://deckofcardsapi.com/static/img/" + dealerHoldCard + ".png";
     document.getElementById("dealer0").alt = dealerHoldCard;
-    document.getElementById("dealerCard0").innerHTML = dealerHoldCard;
-    document.getElementById("dealerCard0").style.display='block';
+    document.getElementById("dealer0").style.display='block';
+    document.getElementById("dealerTotal").innerHTML = "Dealer: " + countHand(dealerHand);
 
     if(countHand(dealerHand) >= 17)
     {
@@ -301,7 +281,7 @@ var stand = function()
     }
 
     if(countHand(dealerHand) < 17)
-    {
+	{
         console.log("Here: " + countHand(dealerHand));
         drawDealerCard();
         console.log("Here after draw card: " + countHand(dealerHand));
@@ -435,5 +415,4 @@ var enableNewGame = function()
 {
     document.getElementById("NewGame").disabled = false;
 }
-
 
