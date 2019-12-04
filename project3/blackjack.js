@@ -83,7 +83,7 @@ var newDeck = function()
 
 var enableNewGameButton= function()
 {
-    document.getElementById("NewGame").disabled = false
+    document.getElementById("NewGame").disabled = false;
 }
 
 var drawPlayerCard = function()
