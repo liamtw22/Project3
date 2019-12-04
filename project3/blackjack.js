@@ -57,8 +57,8 @@ var newDeck = function()
     document.getElementById("dealer6").style.display='none';
 
     document.getElementById("finalOutcome").innerHTML = "";
-    document.getElementById("Stand").disabled = false;
-    document.getElementById("Hit").disabled = false;
+    document.getElementById("Stand").disabled = true;
+    document.getElementById("Hit").disabled = true;
     document.getElementById("NewGame").disabled = true;
 
     proceed = true;
@@ -78,12 +78,25 @@ var newDeck = function()
     setTimeout(drawPlayerCard, 1500);
     setTimeout(drawDealerCard, 2000);
     setTimeout(drawDealerCard, 2500);
+    
     setTimeout(enableNewGameButton, 3000);
+    setTimeout(enableHitButton, 3000);
+    setTimeout(enableStandButton, 3000);
 }
 
-var enableNewGameButton= function()
+var enableNewGameButton = function()
 {
     document.getElementById("NewGame").disabled = false;
+}
+
+var enableHitButton = function()
+{
+    document.getElementById("Hit").disabled = false;
+}
+
+var enableStandButton = function()
+{
+    document.getElementById("Stand").disabled = false;
 }
 
 var drawPlayerCard = function()
