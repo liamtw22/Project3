@@ -7,6 +7,7 @@ body {
 #heading {
     letter-spacing: 0.3em;
     font-size: xx-large;
+    margin-top: 30px;
 }
 
 #finalOutcome{
@@ -19,7 +20,6 @@ body {
     width: 1050px;
     background-color: #53AE8D;
     border-radius: 40px;
-    
 }
 
 #dealerTotal{
@@ -28,6 +28,8 @@ body {
     text-transform: uppercase;
     color: #EFEFEF;
     margin: 3%;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 #playerTotal{
@@ -36,6 +38,8 @@ body {
     text-transform: uppercase;
     color: #EFEFEF;
     margin: 3%;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 figure{
