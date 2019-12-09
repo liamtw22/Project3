@@ -9,6 +9,10 @@ body {
     font-size: xx-large;
     margin-top: 30px;
 }
+#headingLogin {
+    font-size: xx-large;
+    margin-top: 30px;
+}
 
 #finalOutcome{
     font-size: x-large;
@@ -16,6 +20,13 @@ body {
 }
 
 #table {
+    margin: auto;
+    width: 1050px;
+    background-color: #53AE8D;
+    border-radius: 40px;
+}
+
+#login {
     margin: auto;
     width: 1050px;
     background-color: #53AE8D;
@@ -55,7 +66,7 @@ figure{
 
 img{
     width: 120px;
-    height: auto;
+    height: 166.7256636px;
     margin: .5%;
 }
 
