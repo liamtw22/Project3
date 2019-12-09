@@ -9,6 +9,11 @@ var dealerHoldCard;
 
 var proceed = true;
 
+var win = 2;
+var wins = 0;
+var losses = 0;
+var ties = 0;
+
 var countHand = function(cardArray)
 {
 	var sum = 0;
@@ -56,7 +61,7 @@ var newDeck = function()
     document.getElementById("dealer5").style.display='none';
     document.getElementById("dealer6").style.display='none';
 
-    document.getElementById("finalOutcome").innerHTML = "";
+    document.getElementById("finalOutcome").innerHTML = "Wins: " + wins + "&nbsp &nbsp Losses: " + losses + "&nbsp &nbsp Ties: " + ties;
     document.getElementById("Stand").disabled = true;
     document.getElementById("Hit").disabled = true;
     document.getElementById("NewGame").disabled = true;
@@ -252,6 +257,8 @@ var checkPlayerHand = function()
     if(countHand(playerHand) > 21)
     {
         document.getElementById("finalOutcome").innerHTML = "Your total exceeds 21. You lose.";
+        win = -1;
+        losses++;
         document.getElementById("Stand").disabled = true;
         document.getElementById("Hit").disabled = true;
     }
@@ -273,6 +280,8 @@ var stand = function()
         if(countHand(dealerHand) == countHand(playerHand))
         {
             document.getElementById("finalOutcome").innerHTML = "Both your hand and the dealer's hands total " + countHand(dealerHand) + ". It's a tie.";
+            win = 0;
+            ties++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;
@@ -281,6 +290,8 @@ var stand = function()
         if(countHand(dealerHand) > countHand(playerHand))
         {
             document.getElementById("finalOutcome").innerHTML = "The dealer's hand is greater than your hand, which totaled " + countHand(playerHand) + ". You lose.";
+            win = -1;
+            losses++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;
@@ -289,6 +300,8 @@ var stand = function()
         if(countHand(playerHand) > countHand(dealerHand))
         {
             document.getElementById("finalOutcome").innerHTML = "Your hand, which totaled " + countHand(playerHand) + ", is greater than the dealer's hand. You win!";
+            win = 1;
+            wins++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;
@@ -304,6 +317,8 @@ var stand = function()
         if(countHand(dealerHand) > 21)
         {
             document.getElementById("finalOutcome").innerHTML = "The dealer's total exceeds 21. You win!";
+            win = 1;
+            wins++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;
@@ -312,6 +327,8 @@ var stand = function()
         if(countHand(dealerHand) == countHand(playerHand) && countHand(dealerHand) >= 17)
         {
             document.getElementById("finalOutcome").innerHTML = "Both your hand and the dealer's hands total " + countHand(dealerHand) + ". It's a tie.";
+            win = 0;
+            ties++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;     
@@ -320,6 +337,8 @@ var stand = function()
         if(countHand(dealerHand) > countHand(playerHand) && countHand(dealerHand) >= 17)
         {
             document.getElementById("finalOutcome").innerHTML = "The dealer's hand is greater than your hand, which totaled " + countHand(playerHand) + ". You lose.";
+            win = -1;
+            losses++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;       
@@ -328,6 +347,8 @@ var stand = function()
         if(countHand(playerHand) > countHand(dealerHand) && countHand(dealerHand) >= 17)
         {
             document.getElementById("finalOutcome").innerHTML = "Your hand, which totaled " + countHand(playerHand) + ", is greater than the dealer's hand. You win!";
+            win = 1;
+            wins++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;
@@ -353,6 +374,8 @@ var dealerLessSeventeen = function()
         if(countHand(dealerHand) > 21)
         {
             document.getElementById("finalOutcome").innerHTML = "The dealer's total exceeds 21. You win!";
+            win = 1;
+            wins++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;
@@ -361,6 +384,8 @@ var dealerLessSeventeen = function()
         if(countHand(dealerHand) == countHand(playerHand) && countHand(dealerHand) >= 17)
         {
             document.getElementById("finalOutcome").innerHTML = "Both your hand and the dealer's hands total " + countHand(dealerHand) + ". It's a tie.";
+            win = 0;
+            ties++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;     
@@ -369,6 +394,8 @@ var dealerLessSeventeen = function()
         if(countHand(dealerHand) > countHand(playerHand) && countHand(dealerHand) >= 17)
         {
             document.getElementById("finalOutcome").innerHTML = "The dealer's hand is greater than your hand, which totaled " + countHand(playerHand) + ". You lose.";
+            win = -1;
+            losses++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;       
@@ -377,6 +404,8 @@ var dealerLessSeventeen = function()
         if(countHand(playerHand) > countHand(dealerHand) && countHand(dealerHand) >= 17)
         {
             document.getElementById("finalOutcome").innerHTML = "Your hand, which totaled " + countHand(playerHand) + ", is greater than the dealer's hand. You win!";
+            win = 1;
+            wins++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;
@@ -395,6 +424,8 @@ var dealerOtherOutcome = function()
         if(countHand(dealerHand) > 21)
         {
             document.getElementById("finalOutcome").innerHTML = "The dealer's total exceeds 21. You win!";
+            win = 1;
+            wins++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;
@@ -403,6 +434,8 @@ var dealerOtherOutcome = function()
         if(countHand(dealerHand) == countHand(playerHand) && countHand(dealerHand) >= 17)
         {
             document.getElementById("finalOutcome").innerHTML = "Both your hand and the dealer's hands total " + countHand(dealerHand) + ". It's a tie.";
+            win = 0;
+            ties++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;     
@@ -411,6 +444,8 @@ var dealerOtherOutcome = function()
         if(countHand(dealerHand) > countHand(playerHand) && countHand(dealerHand) >= 17)
         {
             document.getElementById("finalOutcome").innerHTML = "The dealer's hand is greater than your hand, which totaled " + countHand(playerHand) + ". You lose.";
+            win = -1;
+            losses++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;       
@@ -419,6 +454,8 @@ var dealerOtherOutcome = function()
         if(countHand(playerHand) > countHand(dealerHand) && countHand(dealerHand) >= 17)
         {
             document.getElementById("finalOutcome").innerHTML = "Your hand, which totaled " + countHand(playerHand) + ", is greater than the dealer's hand. You win!";
+            win = 1;
+            wins++;
             document.getElementById("Stand").disabled = true;
             document.getElementById("Hit").disabled = true;
             proceed = false;
@@ -429,5 +466,10 @@ var dealerOtherOutcome = function()
 var enableNewGame = function()
 {
     document.getElementById("NewGame").disabled = false;
+}
+
+var getWin = function()
+{
+    return win;
 }
 
