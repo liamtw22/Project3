@@ -43,7 +43,7 @@ if ($stmt->num_rows > 0) {
 		$_SESSION['name'] = $_POST['username'];
 		$_SESSION['id'] = $id;
 		echo 'Welcome ' . $_SESSION['name'] . '!';
-		header('Location: check.php');
+		header('Location: blackjack.php');
 
 	} else {
 		echo 'Incorrect password!';
