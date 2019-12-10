@@ -7,10 +7,11 @@
     </head>
 
     <body>
+            
         <h1 id = "heading">BLACKJACK</h1>
         <div id="table">
             <br>
-            <h1 id="finalOutcome"></h1>
+            <h1 id="finalOutcome">Wins: 0&nbsp &nbsp Losses: 0&nbsp &nbsp Ties: 0</h1>
             <br>
             <h3 id="dealerTotal">Dealer: </h3>
 
@@ -45,8 +46,12 @@
             <button id="Stand" class="newGame" disabled=true onclick="stand();">Stand</button>
             <br>
             <button id="NewGame" class="newGame" onclick="newDeck();">New Game</button>
+            <br><br><br>
+            <div class = "buttonHref">
+            <a href="leaderboard.php"><i class="fas fa-user-circle"></i>Profile</a>
+            <a href ="logout.php"> <i class="fas fa-user-circle"></i>Logout</a>
             <br>
-            <br>
+            </div>
         </div>
 
     </body>
