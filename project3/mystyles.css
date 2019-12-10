@@ -8,6 +8,7 @@ body {
     letter-spacing: 0.3em;
     font-size: xx-large;
     margin-top: 30px;
+    margin-left: 30px;
 }
 #headingLogin {
     font-size: xx-large;
@@ -26,6 +27,36 @@ body {
     border-radius: 40px;
 }
 
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+  }
+  
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+ tr:nth-child(even){background-color: #cacaca;}
+  
+ tr:hover {background-color: rgb(153, 153, 153);}
+  
+ th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #53AE8D;
+    color: white;
+    font-size: xx-large;
+  }
+  td{
+      font-size: xx-large;
+  }
+      
 #login {
     margin: auto;
     width: 1050px;
