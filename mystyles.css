@@ -4,16 +4,87 @@ body {
     background-color: #EFEFEF;
 }
 
-h1 {
+#heading {
     letter-spacing: 0.3em;
+    font-size: xx-large;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+#headingLogin {
+    font-size: xx-large;
+    margin-top: 30px;
+}
+
+#finalOutcome{
+    font-size: x-large;
+    color: #EFEFEF;
 }
 
 #table {
     margin: auto;
     width: 1050px;
+    height: 1000px;
+    background-color: #53AE8D;
+    border-radius: 80px;
+}
+
+a:link {
+    color: #484e56;
+    width: 147px;
+    background-color: #EFEFEF;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    padding: 17px 14px;
+    font-weight: bold;
+    
+  }
+
+
+  a:hover {
+    opacity: 0.7;
+    transition: 1s;
+    cursor: pointer;
+  }
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+  }
+  
+  #bottonHref{
+      text-align: center;
+  }
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+ tr:nth-child(even){background-color: #cacaca;}
+  
+ tr:hover {background-color: rgb(153, 153, 153);}
+  
+ th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #53AE8D;
+    color: white;
+    font-size: xx-large;
+  }
+  td{
+      font-size: xx-large;
+  }
+      
+#login {
+    margin: auto;
+    width: 1050px;
     background-color: #53AE8D;
     border-radius: 40px;
-    
 }
 
 #dealerTotal{
@@ -22,6 +93,8 @@ h1 {
     text-transform: uppercase;
     color: #EFEFEF;
     margin: 3%;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 #playerTotal{
@@ -30,6 +103,8 @@ h1 {
     text-transform: uppercase;
     color: #EFEFEF;
     margin: 3%;
+    font-weight: bold;
+    font-size: x-large;
 }
 
 figure{
@@ -45,7 +120,7 @@ figure{
 
 img{
     width: 120px;
-    height: auto;
+    height: 166.7256636px;
     margin: .5%;
 }
 
@@ -60,14 +135,17 @@ button {
     margin-top: 22px;
     vertical-align: top;
     height: 50px;
+    font-weight: bold;
 }
+
 button:hover {
     opacity: 0.7;
     transition: 1s;
     cursor: pointer;
 }
+
 button:disabled {
     pointer-events: none;
-    background-color: rgb(160, 160, 160);
+    background-color: rgb(180, 180, 180);
     opacity: 0.7;
 }

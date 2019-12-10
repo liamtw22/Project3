@@ -80,7 +80,7 @@ $stmt->close();
   
    
 <h1>
-        Welcome <?=$_SESSION['name']?>, You have: <?=$wins?> wins, <?=$loss?> losses, and <?=$tie?> ties
+        Welcome <?=$_SESSION['name']?><br> You have: <?=$wins?> wins, <?=$loss?> losses, and <?=$tie?> ties
 
  </h1>
    <?php

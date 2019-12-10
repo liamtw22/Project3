@@ -39,7 +39,7 @@ $stmt->close();
 
     <body>
       
-        <h1>BLACKJACK</h1>
+        <h1 id = "heading">BLACKJACK</h1>
         <div id="table">
             <br>
             <script>
@@ -51,22 +51,17 @@ $stmt->close();
             Welcome <?=$_SESSION['name']?>, You have: <script type="text/javascript">
         document.write(wins)
       </script> Wins,
+      <script type="text/javascript">
+        document.write(losses)
+      </script> Losses,
+      <script type="text/javascript">
+        document.write(ties)
+      </script> Ties
+
             </h1>
             <br>
             <br>
-        <h1>
-        Welcome <?=$_SESSION['name']?>
-
-        </h1>
-       
-        <h1 id = "finalOutcome">
-      
-        Welcome <?=$_SESSION['name']?>, You have: <script type="text/javascript">
-        document.write(valw)
-      </script> Wins, <?=$loss?> losses, and <?=$tie?> ties
-    
- </h1>
-
+        
 </br>
             <h3 id="dealerTotal">Dealer: </h3>
 
@@ -101,11 +96,14 @@ $stmt->close();
             <button id="Stand" class="newGame" disabled=true onclick="stand();">Stand</button>
             <br>
             <button id="NewGame" class="newGame" onclick="newDeck();">New Game</button>
-            <button id="NewGame" class="newGame" >Send Score</button>
-  
+            <br><br><br>
+            <div class = "buttonHref">
             <a href="leaderboard.php"><i class="fas fa-user-circle"></i>Profile</a>
-<p></p>
+            <a href ="logout.php"> <i class="fas fa-user-circle"></i>Logout</a>
+            <br>
+            
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         $("button").click(function(){
