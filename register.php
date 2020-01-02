@@ -31,6 +31,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	if ($stmt->num_rows > 0) {
 		// Username already exists
 		echo 'Username exists, please choose another!';
+		header( "refresh:5; url=register.html" ); 
 	} else {
         // Insert new account
         
@@ -46,24 +47,21 @@ if ($stmt = $con->prepare('INSERT INTO accounts (username, password, wins,loss,t
 	$stmt->execute();
 
 
-	// if ($stmt = $con->prepare('INSERT INTO accounts (wins,loss,tie) VALUES (?,?,?)')) {
-	// 	$wins = 0;
-	// 	$loss = 0;
-	// 	$tie = 0;
-	// 	$stmt->bind_param("iii", $wins, $loss,$tie);
-	// 	$stmt->execute();
-	// }
+	
 
 	echo 'You have successfully registered, you can now login!';
+	header( "refresh:5; url=login.html" ); 
 } else {
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	echo 'Could not prepare statement!';
+	header( "refresh:5; url=register.html" ); 
 }
 	}
 	$stmt->close();
 } else {
 	// Something is wrong with the sql statement, check to make sure accounts table exists with all 3 fields.
 	echo 'Could not prepare statement!';
+	header( "refresh:5; url=register.html" ); 
 }
 $con->close();
 ?>

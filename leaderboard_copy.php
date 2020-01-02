@@ -78,20 +78,22 @@ $stmt->close();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 </head>
 
+
+<body class="loggedin">
+
+
+
+
+<nav class = "navtop">
+    <div>
+				<a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a>
+                <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <a href ="blackjack.php"> <i class="fas fa-user-circle"></i>Home</a>
+</div>
+    
+</nav>
+</body>
 <body>
-  
-
-
-
-
-
-<ul>
-
-<li><a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
-<li><a href ="blackjack.php"> <i class="fas fa-user-circle"></i>Home</a></li>
-
-</ul>
-
 <h1>
         Welcome <?=$_SESSION['name']?><br> You have: <?=$wins?> wins, <?=$loss?> losses, and <?=$tie?> ties
      

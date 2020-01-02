@@ -47,9 +47,11 @@ if ($stmt->num_rows > 0) {
 
 	} else {
 		echo 'Incorrect password!';
+		header( "refresh:5; url=login.html" ); 
 	}
 } else {
 	echo 'Incorrect username!';
+	header( "refresh:5; url=login.html" ); 
 }
 $stmt->close();
 ?>
